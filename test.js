@@ -4,12 +4,23 @@ function check() {
     allArrayElements = Array.from(document.querySelector("#quiz_id").elements);
     first = document.getElementById("fname").value;
     last = document.getElementById("lname").value; 
+    email = document.getElementById("email").value;
     var len = allArrayElements.filter(element => element.checked).length;
 
-    if (len == reqLength && first != null && last != null)
+    if (len == reqLength && first != null && last != null && email != null)
     {
-    var userAnswer = record(allArrayElements, [first, last]);
-    insertAnswers();
+    var userAnswer = record(allArrayElements, [first, last, email]);
+    //insertAnswers();
+    const url = new URL("http://localhost:5500/candidateData");
+    const option = {
+        method: 'POST',
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body: userAnswer
+    }
+    fetch(url, option);
+
     console.log(userAnswer);
 }
     
@@ -23,7 +34,8 @@ function record(ar, names) {
     var answer = [];
 
     answer.push(names[0]);
-     answer.push(names[1]);
+    answer.push(names[1]);
+    answer.push(names[2]);
     ar.forEach(element => {
         if (element.type == "radio" && element.checked)
         {answer.push(element.value);
@@ -37,5 +49,6 @@ function record(ar, names) {
 function arrayToJson(ar) {
     return JSON.stringify({firstName: ar[0],
             lastName: ar[1],
-            answers: ar.splice(2, ar.length)});
+            email: ar[2],
+            answers: ar.splice(3, ar.length)});
 }

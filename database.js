@@ -1,7 +1,19 @@
-function insertAnswers() {
+
 var express = require("express");
 var mysql = require('mysql');
 var app = express();
+
+const cors = require("cors")
+app.use(cors());
+app.use(express.json());
+app.listen(5500, () => {
+    console.log("server started at", 5500);
+});
+
+app.post('/candidateData', (req, res) => {
+    const userData = req.body;
+    console.log(`recieved data: ${typeof(userData.firstName)}\n`);
+
 var connection = mysql.createConnection({
     //properties
     host: "localhost",
@@ -16,13 +28,12 @@ connection.connect(function (error) {
     }
     else
     console.log("connected");});
-    connection
-    connection.query('INSERT INTO candidate (fname, lname, email) VALUES("john", "doe",  "john@gmail.com");', (err, rows) => {
+    connection.query(`INSERT INTO candidate (fname, lname, email) VALUES("${userData.firstName}", "${userData.lastName}",  "${userData.email}");`, (err, rows) => {
         if(err) {
             throw err;
         }
         else
-        {console.log("received");
+        {console.log(`inserted user with email ${userData.email}`);
         console.log(rows);}
     });
     connection.end((err) => {
@@ -32,4 +43,5 @@ connection.connect(function (error) {
         console.log("connection end");
       });
 
-    }
+    
+    });

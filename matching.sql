@@ -18,3 +18,7 @@ CREATE TABLE IF NOT EXISTS question (
                 
 INSERT INTO candidate (fname, lname, email) VALUES
 			("richard", "wang",  "johndow@gmail.com");
+
+INSERT INTO candidate (fname, lname, email) VALUES
+			("qw", "ew",  "qw");
+SELECT * FROM candidate;
