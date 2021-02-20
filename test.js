@@ -20,8 +20,9 @@ function check() {
         body: userAnswer
     }
     fetch(url, option);
-
     console.log(userAnswer);
+
+    // do something here to query userdata
 }
     
     else
