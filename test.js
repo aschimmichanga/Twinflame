@@ -8,7 +8,9 @@ function check() {
 
     if (len == reqLength && first != null && last != null)
     {
-    console.log(record(allArrayElements, [first, last]));
+    var userAnswer = record(allArrayElements, [first, last]);
+    insertAnswers();
+    console.log(userAnswer);
 }
     
     else
