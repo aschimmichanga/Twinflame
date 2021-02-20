@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>testing page</title>
+    <title>Quiz</title>
+    <script type = "text/javascript" src="test.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<form>
-    <label for="fname">First name:</label>
-    <input type="text" id="fname" name="fname"><br><br>
-    <label for="lname">Last name:</label>
-    <input type="text" id="lname" name="lname"><br><br>
-    <input type="submit" value="Submit">
+<form name="quiz" id="quiz">
+    <div>
+        <p>what is a test?</p>
+        <p><input type="radio" name="question1" value="test1">A. test1</p>
+        <p><input type="radio" name="question1" value="test2">B. test1</p>
+        <p><input type="radio" name="question1" value="test3">C. test1</p>
+        <p><input type="radio" name="question1" value="test4">D. test1</p>
+    </div>
+   <input type="button" name="submit" value="submit answer" onclick="check()">
   </form>
+
+  <script>
+  </script>
 </body>
 
 
