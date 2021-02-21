@@ -21,4 +21,4 @@ INSERT INTO candidate (fname, lname, email) VALUES
 
 INSERT INTO candidate (fname, lname, email) VALUES
 			("qw", "ew",  "qw");
-SELECT * FROM candidate;
+

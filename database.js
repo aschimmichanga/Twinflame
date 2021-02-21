@@ -3,16 +3,61 @@ var express = require("express");
 var mysql = require('mysql');
 var app = express();
 
+
+
 const cors = require("cors")
 app.use(cors());
 app.use(express.json());
 app.listen(5500, () => {
     console.log("server started at", 5500);
 });
+
+// receive email
+var checkEmail;
+app.post('/email', (req, res) => {
+    checkEmail = req.body.email;
+
+    // create connection for local mySQL server
+});
+
+// return email status
+app.get('/check', (req, res) => {
+ 
+    // create connection for local mySQL server
+var connection = mysql.createConnection({
+    //properties
+    host: "localhost",
+    user: "root",
+    password: "password",
+    database: "matching",
+});
+connection.query(`select exists(select * from candidate where email="${checkEmail}")`, (error, result, fields) => {
+    if(error) 
+    {throw error;}
+    
+    
+
+    res.send(result);
+});
+
+ // ending connection for mySql
+ connection.end((err) => {
+    // The connection is terminated gracefully
+    // Ensures all remaining queries are executed
+    // Then sends a quit packet to the MySQL server.
+    console.log("connection end");
+  });
+
+    // invoke the javascript here  
+
+});
+
+
+
 // recieve data from website
 app.post('/candidateData', (req, res) => {
     const userData = req.body;
-    console.log(`recieved data: ${typeof(userData.firstName)}\n`);
+    console.log(`recieved data (check firstname): ${typeof(userData.firstName)}\n`);
 
 // create connection for local mySQL server
 var connection = mysql.createConnection({
@@ -25,7 +70,7 @@ var connection = mysql.createConnection({
 
 // insert value into local sql Server 
 connection.connect(function (error) {
-    if(!!error) {
+    if(error) {
         console.log(error);
     }
     else
@@ -52,15 +97,17 @@ connection.connect(function (error) {
         });
     c++;
     });
-
+    
     // ending connection for mySql
-    connection.end((err) => {
-        // The connection is terminated gracefully
-        // Ensures all remaining queries are executed
-        // Then sends a quit packet to the MySQL server.
-        console.log("connection end");
-      });
+ connection.end((err) => {
+    // The connection is terminated gracefully
+    // Ensures all remaining queries are executed
+    // Then sends a quit packet to the MySQL server.
+    console.log("connection end");
+  });
 
     // invoke the javascript here  
 
     });
+
+

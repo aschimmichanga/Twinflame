@@ -15,7 +15,7 @@ def matches(dict, target_email):
             if not email in emails_to_exclude:
                 other_user = dict.get(email)
                 score = 0
-                for i in range(1,11):
+                for i in range(1, QUESTION_AMT + 1):
                     if other_user.get("q" + str(i)) == target_user.get("q" + str(i)):
                         score += 1
                     else:
