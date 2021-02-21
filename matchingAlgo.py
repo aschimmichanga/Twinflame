@@ -1,6 +1,6 @@
 import sys
 import mysql.connector
-import json
+
 candidate_email = sys.argv[1]
 
 candidateDB = mysql.connector.connect(
@@ -33,7 +33,7 @@ for firstName, lastName, email in myresult:
 
 QUESTION_AMT = 10
 
-def matches(dict, target_email):
+def matches(dict , target_email):
     target_user = dict.get(target_email)
     score_dict = {}
 
@@ -47,35 +47,14 @@ def matches(dict, target_email):
                         score += 1
                     else:
                         score -= 1
-                score_dict[email] = score_dict
-        if len(emails_to_exclude) < 4:
-            return make_matches(emails_to_exclude.append(score_dict.values().index(max(score_dict.values()))))
-        return emails_to_exclude
+                score_dict[email] = score
+
+        #print(score_dict.values())
+        return max(score_dict.keys(), key=lambda a: score_dict[a])
+
 
     # find top 3 matches
-    match_emails = make_matches([target_email]).remove(target_user)
-    first = {
-        "first_name": dict.get(match_emails[0]).get("first_name"),
-        "last_name": dict.get(match_emails[0]).get("last_name"),
-        "email": match_emails[0]
-    }
-    second = {
-        "first_name": dict.get(match_emails[1]).get("first_name"),
-        "last_name": dict.get(match_emails[1]).get("last_name"),
-        "email": match_emails[1]
-    }
-    third = {
-        "first_name": dict.get(match_emails[2]).get("first_name"),
-        "last_name": dict.get(match_emails[2]).get("last_name"),
-        "email": match_emails[2]
-    }
-
-    match_emails = {
-        "first": first,
-        "second": second,
-        "third": third
-    }
-
-    print(match_emails["first"])
-
-matches("sampleemail1")
+    match_emails = make_matches([target_email])
+    return f"{match_emails}, {dict[match_emails]['first_name']}, {dict[match_emails]['last_name']}"
+print(matches(allUserData, candidate_email), end="")
+sys.stdout.flush()

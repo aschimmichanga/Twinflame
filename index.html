@@ -1,107 +1,192 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><!--  This site was created in Webflow. http://www.webflow.com  -->
+<!--  Last Published: Sun Feb 21 2021 09:11:47 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="60316bc83b86debe339302d8" data-wf-site="60316bc83b86de2e5a9302cd">
 <head>
-    <title>Quiz</title>
-    <script type = "text/javascript" src="test.js"></script>
-    <!-- <script type = "text/javascript" src="database.js"></script> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>beaaaaan</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/beaaaaan.webflow.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic","PT Sans:400,400italic,700,700italic","Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic","Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Inconsolata:400,700","Exo:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Varela Round:400"]  }});</script>
+  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
 </head>
-<body>
-<form name="quiz" id="quiz_id">
-    <div>
-        <p>It’s your first day on your camping trip, what are you gonna do first?
-        </p>
-        <p><input type="radio" name="question1" value="A">A. Unpack everything and settle in.
-        </p>
-        <p><input type="radio" name="question1" value="B">B. Bolt to the nearest nature spot and explore.
-        </p>
-        <p><input type="radio" name="question1" value="C">C. Bolt to the nearest nature spot and explore.</p>
-        <p><input type="radio" name="question1" value="D">D. Start prepping the fort for invading bears and animals</p>
+<body class="body">
+  <div style="opacity:1" class="page-transition-overlay">
+    <div class="div-block-55">
+      <div data-w-id="93a00ef5-34d3-de61-8651-c506159bd9ef" data-animation-type="lottie" data-src="documents/lottieflow-loading-04-1-c1f7d5-easey.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="3.1458333333333335" data-duration="0" class="lottie-animation"></div>
     </div>
-
-   <div>
-    <p>You need to choose a place to sleep on your first night, where do you go?</p>
-    <p><input type="radio" name="question2" value="A">A. Under the starry night out in the open.</p>
-    <p><input type="radio" name="question2" value="B">B. Snuggle in your tent out in the wilderness.</p>
-    <p><input type="radio" name="question2" value="C">C. Sleep in the furnished RV.</p>
-    <p><input type="radio" name="question2" value="D">D. Sleep is for the weak!</p>
-</div>
-
-<div>
-    <p>Day 2 is incoming, choose a spot to explore nearby:</p>
-    <p><input type="radio" name="question3" value="A">A. The beach or the lake, geronimo!</p>
-    <p><input type="radio" name="question3" value="B">B. The nearest hiking trail.</p>
-    <p><input type="radio" name="question3" value="C">C. The forest and the mountains, become one with the bears.</p>
-    <p><input type="radio" name="question3" value="D">D. Nope, I’m gonna stay right here.</p>
-</div>
-
-<div>
-    <p>Where are you gonna go to get your supplies for dinner?</p>
-    <p><input type="radio" name="question4" value="A">A. Hunt and forage for edible goodies.</p>
-    <p><input type="radio" name="question4" value="B">B. The nearest grocery store or mini-mart.</p>
-    <p><input type="radio" name="question4" value="C">C. Pffft, I brought everything I needed!</p>
-    <p><input type="radio" name="question4" value="D">D. Food is for the weak!</p>
-</div>
-
-<div>
-    <p>Uh oh! During the night, the bears have come to nibble your feet. What’s your plan?</p>
-    <p><input type="radio" name="question5" value="A">A. Show them who's boss!</p>
-    <p><input type="radio" name="question5" value="B">B. Slowly back away…</p>
-    <p><input type="radio" name="question5" value="C">C. Get the heck outta there!</p>
-    <p><input type="radio" name="question5" value="D">D. Fetal position.</p>
-</div>
-<div>
-    <p>On Day 3, you’re a little stressed from the encounter with the bears. How are you gonna chill?</p>
-    <p><input type="radio" name="question6" value="A">A. Nice cup of something hot and a s’more.</p>
-    <p><input type="radio" name="question6" value="B">B. Something straight from the grill.</p>
-    <p><input type="radio" name="question6" value="C">C. Go get some exercise.</p>
-    <p><input type="radio" name="question6" value="D">D. Chill with a book or some video games.</p>
-</div>
-<div>
-    <p>You can’t seem to remember why you went camping, what was your reason again?</p>
-    <p><input type="radio" name="question7" value="A">A. Wanted to do something with the fam or your buds.</p>
-    <p><input type="radio" name="question7" value="B">B. I love me some nature!</p>
-    <p><input type="radio" name="question7" value="C">C. Got dragged or peer pressured into it.</p>
-    <p><input type="radio" name="question7" value="D">D. For the experience!</p>
-</div>
-<div>
-    <p>It’s night time again, and this time the bears are back again! Choose something to defend yourself with:</p>
-    <p><input type="radio" name="question8" value="A">A. The strongest bear chemical repellant in the world.</p>
-    <p><input type="radio" name="question8" value="B">B. All the riot shields.</p>
-    <p><input type="radio" name="question8" value="C">C. Gun.</p>
-    <p><input type="radio" name="question8" value="D">D. Dual-wielding chainsaws.</p>
-</div>
-<div>
-    <p>It’s Day 4 of your camping trip, and you have a hankering for some arts and crafts. You have some wood and paint nearby, what will you make?</p>
-    <p><input type="radio" name="question9" value="A">A. wood carving.</p>
-    <p><input type="radio" name="question9" value="B">B. Makeshift jenga.</p>
-    <p><input type="radio" name="question9" value="C">C. Planks for a house.</p>
-    <p><input type="radio" name="question9" value="D">D. Small toothpick.</p>
-</div>
-<div>
-    <p>What color are you going to paint your thing?</p>
-    <p><input type="radio" name="question10" value="A">A. Blue</p>
-    <p><input type="radio" name="question10" value="B">B. Red</p>
-    <p><input type="radio" name="question10" value="C">C. Green</p>
-    <p><input type="radio" name="question10" value="D">D. Yellow</p>
-</div>
-<div>
-    <p>put in your first name and last name</p>
-    <p><input type="text" id="fname" name="fname" placeholder ="first name"></p>
-    <p><input type="text" id="lname" name="lname" placeholder ="last name"></p>
-</div>
-<div>
-    <p>put in your email</p>
-    <p><input type="text" id="email" name="email" placeholder ="email"></p>
-   
-</div>
-
-<input type="button" name="submit" value="submit answer" onclick="check()">
-  </form>
-
+  </div>
+  <div data-collapse="tiny" data-animation="default" data-duration="400" role="banner" class="navbar-2 w-nav">
+    <div class="contain flex no-padding">
+      <div class="nav-content-wrap">
+        <a href="index.html" aria-current="page" class="brand nav w-nav-brand w--current"><img src="images/f5ca5fc5-0ffa-4057-925f-66df3abae8f1_200x200.png" loading="lazy" width="118" height="100" alt=""></a>
+        <nav role="navigation" class="nav-menu-3 w-nav-menu">
+          <a href="#about-us" class="nav-link-2 w-nav-link">About Us</a>
+          <a href="#our-stories" class="nav-link-2 w-nav-link">Stories</a>
+          <a href="survey.html" class="nav-link-2 contact-btn w-nav-link"><span class="text-span">Get Matched</span></a>
+        </nav>
+        <div class="menu-button-3 w-nav-button">
+          <div class="icon-2 w-icon-nav-menu"></div>
+        </div>
+      </div>
+    </div>
+    <div class="div-block-25">
+      <a href="#" class="nav-link-2 tablet w-nav-link">About us</a>
+      <a href="#" class="nav-link-2 tablet w-nav-link">Our stories</a>
+      <a href="#" class="nav-link-2 last tablet w-nav-link">News and events</a>
+    </div>
+  </div>
+  <div class="home-hero-section">
+    <div class="contain">
+      <div class="flex-hor-left-middle tablet-reverse">
+        <div class="div-block">
+          <div data-w-id="c179fa22-dbfa-8963-f867-ab3450749b23" style="-webkit-transform:translate3d(50PX, 0PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(50PX, 0PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(50PX, 0PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(50PX, 0PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="hero-brush-text">Twin<br>Flame</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="take-action-section">
+    <div class="contain"></div>
+  </div>
+  <section id="about-us" class="what-we-do-section">
+    <div class="contain">
+      <div class="div-block-27">
+        <div class="block-tag white">About US</div>
+        <div class="m-t-40">
+          <div class="m-b-60">
+            <div data-w-id="732745f8-fb03-4077-098e-76b987b2b038" style="opacity:0" class="headline-lrg">In these uncertain times, reaching out to the people around us is harder than ever. We&#x27;re a group of freshmen Northeastern students who want to make getting to know our digital neighbors a little bit easier. <br><br>To that end, we&#x27;ve created a outdoors-based people-matching platform, Twin Flame. Users answer a series of questions in camping scenarios; we then use a custom-made algorithm to match them with whoever answered most similarly. We&#x27;re hoping our survey will spark conversations and help some people find their &#x27;twin flame&#x27;. </div>
+          </div>
+        </div>
+      </div>
+      <div class="div-block-26 w-clearfix">
+        <div class="col-wrap"></div>
+        <div class="col-wrap middle"></div>
+        <div class="col-wrap"></div>
+      </div>
+    </div>
+  </section>
+  <section id="survey" class="climate-hunger-section">
+    <div class="contain">
+      <div class="flex-hor-left-middle">
+        <div class="div-block-11">
+          <h1 class="heading-3">Get Matched!<br>‍</h1>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="paragraph-3">Our quiz takes about five minutes to complete. At the end, enter your full name and email address, and you&#x27;ll see your match&#x27;s name and email. Don&#x27;t wait, get in touch and strike up a conversation!</p>
+    </div>
+    <a href="survey.html" class="button-11 w-button">SURVEY</a>
+  </section>
+  <section id="our-stories" class="testimonial-slider-section">
+    <div class="contain">
+      <div data-delay="10000" data-animation="slide" data-autoplay="1" data-duration="500" data-infinite="1" data-w-id="11678242-702d-7c37-35de-1716084753b2" style="opacity:0" class="slider w-slider">
+        <div class="w-slider-mask">
+          <div class="w-slide">
+            <div class="slide-content-wrap">
+              <div class="quote-div">
+                <div class="m-b-30">
+                  <h4 class="heading-sm white">“I am most myself when I am with my best friends. I grew up with them, so they helped shape me into the person I am today. When I am with them, regardless of how much time has passed since I last saw them, I feel at home.”</h4>
+                </div>
+                <div class="subheading-sm white">- Gabbi</div>
+              </div><img src="images/Background-Image-3.png" width="468" sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 576px, 468px" srcset="images/Background-Image-3-p-500.png 500w, images/Background-Image-3.png 595w" alt="" class="image">
+            </div>
+          </div>
+          <div class="w-slide">
+            <div class="slide-content-wrap">
+              <div class="quote-div">
+                <div class="m-b-30">
+                  <h1 class="heading-sm white">“Step back, and you will always be impressed by humanity. Others will surprise you in their devotion and kindness, their love and warmth.”</h1>
+                </div>
+                <div class="subheading-sm white">- DANIEL</div>
+              </div><img src="images/Screen-Shot-2021-02-20-at-20.53.08.png" width="452" sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 576px, 452px" srcset="images/Screen-Shot-2021-02-20-at-20.53.08-p-500.png 500w, images/Screen-Shot-2021-02-20-at-20.53.08-p-800.png 800w, images/Screen-Shot-2021-02-20-at-20.53.08.png 964w" alt="" class="image">
+            </div>
+          </div>
+          <div class="w-slide">
+            <div class="slide-content-wrap">
+              <div class="quote-div">
+                <div class="m-b-30">
+                  <h1 class="heading-sm white">“Friends and family are the people who you can always rely on when you&#x27;re in a tough spot. They&#x27;re the people you surround yourself with because you aspire to be them.”</h1>
+                </div>
+                <div class="subheading-sm white">- ANONYMOUS</div>
+              </div><img src="images/shane-rounce-DNkoNXQti3c-unsplash.jpg" width="355" sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 576px, 355px" srcset="images/shane-rounce-DNkoNXQti3c-unsplash-p-500.jpeg 500w, images/shane-rounce-DNkoNXQti3c-unsplash-p-800.jpeg 800w, images/shane-rounce-DNkoNXQti3c-unsplash-p-1080.jpeg 1080w, images/shane-rounce-DNkoNXQti3c-unsplash-p-1600.jpeg 1600w, images/shane-rounce-DNkoNXQti3c-unsplash-p-2000.jpeg 2000w, images/shane-rounce-DNkoNXQti3c-unsplash-p-2600.jpeg 2600w, images/shane-rounce-DNkoNXQti3c-unsplash-p-3200.jpeg 3200w, images/shane-rounce-DNkoNXQti3c-unsplash.jpg 3264w" alt="" class="image">
+            </div>
+          </div>
+          <div class="w-slide">
+            <div class="slide-content-wrap"><img src="images/alan-chen-wdTEHCq1mRo-unsplash.jpg" width="468" sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 576px, 468px" srcset="images/alan-chen-wdTEHCq1mRo-unsplash-p-1080.jpeg 1080w, images/alan-chen-wdTEHCq1mRo-unsplash-p-1600.jpeg 1600w, images/alan-chen-wdTEHCq1mRo-unsplash-p-2000.jpeg 2000w, images/alan-chen-wdTEHCq1mRo-unsplash-p-2600.jpeg 2600w, images/alan-chen-wdTEHCq1mRo-unsplash-p-3200.jpeg 3200w, images/alan-chen-wdTEHCq1mRo-unsplash.jpg 5184w" alt="" class="image">
+              <div class="quote-div">
+                <div class="m-b-30">
+                  <h4 class="heading-sm white">“In a time where sickness runs rampants, connections, no matter how small, become even more meaningful. Small events like bumping into people at random can really brighten your day, so take heart, take a chance, and when opportunity presents itself strike.”</h4>
+                </div>
+                <div class="subheading-sm white">- Emil</div>
+              </div><img src="images/alan-chen-wdTEHCq1mRo-unsplash.jpg" width="600" sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 576px, 54vw" srcset="images/alan-chen-wdTEHCq1mRo-unsplash-p-1080.jpeg 1080w, images/alan-chen-wdTEHCq1mRo-unsplash-p-1600.jpeg 1600w, images/alan-chen-wdTEHCq1mRo-unsplash-p-2000.jpeg 2000w, images/alan-chen-wdTEHCq1mRo-unsplash-p-2600.jpeg 2600w, images/alan-chen-wdTEHCq1mRo-unsplash-p-3200.jpeg 3200w, images/alan-chen-wdTEHCq1mRo-unsplash.jpg 5184w" alt="" class="image">
+            </div>
+          </div>
+          <div class="w-slide">
+            <div class="slide-content-wrap">
+              <div class="quote-div">
+                <div class="m-b-30">
+                  <h1 class="heading-sm white">“My friends are the people who I care about deeply, who I met and became close to through chance and choice. I know them and love them for it, or I don&#x27;t know them as well and still love the time I spend with them.”</h1>
+                </div>
+                <div class="subheading-sm white">- TEA</div>
+              </div><img src="images/tegan-mierle-fDostElVhN8-unsplash.jpg" width="526" sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 576px, 526px" srcset="images/tegan-mierle-fDostElVhN8-unsplash-p-500.jpeg 500w, images/tegan-mierle-fDostElVhN8-unsplash-p-1080.jpeg 1080w, images/tegan-mierle-fDostElVhN8-unsplash-p-1600.jpeg 1600w, images/tegan-mierle-fDostElVhN8-unsplash-p-2000.jpeg 2000w, images/tegan-mierle-fDostElVhN8-unsplash.jpg 2208w" alt="" class="image">
+              <div class="text-block-9"></div>
+            </div>
+          </div>
+          <div class="w-slide">
+            <div class="slide-content-wrap">
+              <div class="quote-div">
+                <div class="m-b-30">
+                  <h1 class="heading-sm white">“We are all erring together, but also discovering together; falling together, but also rising together; apart, but also together.”</h1>
+                </div>
+                <div class="subheading-sm white">- Kristy</div>
+              </div><img src="images/Screen-Shot-2021-02-20-at-21.24.39.png" sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 576px, 54vw" srcset="images/Screen-Shot-2021-02-20-at-21.24.39-p-500.png 500w, images/Screen-Shot-2021-02-20-at-21.24.39.png 788w" alt="" class="image">
+            </div>
+          </div>
+        </div>
+        <div class="left-arrow w-slider-arrow-left">
+          <div class="w-icon-slider-left"></div>
+        </div>
+        <div class="right-arrow w-slider-arrow-right">
+          <div class="w-icon-slider-right"></div>
+        </div>
+        <div class="slide-nav w-slider-nav w-slider-nav-invert"></div>
+        <div class="div-block-14"></div>
+      </div>
+    </div><img src="images/Background-Image-3.png" width="468" sizes="(max-width: 767px) 100vw, (max-width: 991px) 576px, 468px" srcset="images/Background-Image-3-p-500.png 500w, images/Background-Image-3.png 595w" alt="" class="image">
+  </section>
+  <div class="footer-section">
+    <div class="contain">
+      <div data-w-id="2640bd56-5218-e309-8425-4d1c4c37742e" class="div-block-22">
+        <a href="index.html" aria-current="page" class="brand footer w-nav-brand w--current">
+          <h1 class="logo-text">Twin <br>Flame</h1>
+        </a>
+        <div><img src="images/Compass1.png" loading="lazy" width="182" height="229" alt=""></div>
+      </div>
+      <div class="lower-footer-wrap">
+        <div class="text-block-4">Built in Webflow by The Aouns || HackBeanPot 2021<a href="https://www.behance.net/gallery/71348061/Non-profit-UI-Kit?scid=f40a86da-adfd-4207-bac4-3047489b0f85&amp;mv" target="_blank" class="footer-link underlined"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60316bc83b86de2e5a9302cd" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <!--  for the page transitions  -->
   <script>
-  </script>
+  $('.nav-link-2, .brand.nav').click(function (e) {
+    e.preventDefault();
+    var goTo = this.getAttribute("href");
+    setTimeout(function(){
+         window.location = goTo;
+    },1000);       
+});
+</script>
 </body>
-
-
 </html>

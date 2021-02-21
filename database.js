@@ -16,7 +16,6 @@ app.listen(5500, () => {
 var checkEmail;
 app.post('/email', (req, res) => {
     checkEmail = req.body.email;
-
     // create connection for local mySQL server
 });
 
@@ -31,12 +30,16 @@ var connection = mysql.createConnection({
     password: "password",
     database: "matching",
 });
+
+
+console.log("checking given email ", checkEmail);
+
 connection.query(`select exists(select * from candidate where email="${checkEmail}")`, (error, result, fields) => {
     if(error) 
     {throw error;}
     
     
-
+    checkEmail = null;
     res.send(result);
 });
 
@@ -81,7 +84,8 @@ connection.connect(function (error) {
         }
         else
         {console.log(`inserted user with email ${userData.email}`);
-        console.log(rows);}
+        //console.log(rows);
+    }
     });
 
 
@@ -92,8 +96,9 @@ connection.connect(function (error) {
                 throw err;
             }
             else
-            {console.log(`inserted user with email ${userData.email}`);
-            console.log(rows);}
+            {console.log(`inserted user with QUESTION and ${userData.email}`);
+            //console.log(rows);
+        }
         });
     c++;
     });
@@ -107,6 +112,11 @@ connection.connect(function (error) {
   });
 
     // invoke the javascript here  
+    const spawn = require('child_process').spawn;
+    const process = spawn('python3', ['matchingAlgo.py', userData.email]);
+    process.stdout.on('data', data => {
+        res.send(data.toString());
+    });
 
     });
 

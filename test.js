@@ -2,8 +2,8 @@
 
 // if answers are not fully filled, alert, or else record
 function check() {
-    var reqLength = 10;
-    allArrayElements = Array.from(document.querySelector("#quiz_id").elements);
+    var reqLength = 1;
+    allArrayElements = Array.from(document.querySelector("#email-form").elements);
     first = document.getElementById("fname").value;
     last = document.getElementById("lname").value; 
     email = document.getElementById("email").value;
@@ -24,6 +24,7 @@ function check() {
         },
         body: userAnswer
     }
+    console.log(userAnswer);
     fetch(emailurl, emailoption);
     
 
@@ -31,8 +32,8 @@ function check() {
     var emailRepeat = null;
     const checkurl = new URL("http://localhost:5500/check"); 
     console.log("reached");
-    const request = async () => {
-    const Eresponse = await fetch(checkurl)
+    const request = () => {
+    const Eresponse = fetch(checkurl)
     .then(response => {return response.text();})
     .then(data => {
         emailStatus = data;
@@ -42,7 +43,7 @@ function check() {
         } */
          console.log("22 ", emailStatus);
          emailRepeat = emailStatus[emailStatus.length - 3];
-         console.log("happned");
+         console.log("happened");
         console.log("the status is " + emailRepeat);
     });
 
@@ -59,11 +60,25 @@ function check() {
         },
         body: userAnswer
     }
+    function executeEmail() {
+        console.log("current email repeat is ", emailRepeat);
+        fetch(url, option)
+        .then(response => response.text())
+        .then(data => {
+            console.log("return value ", data.split(", "));
+            output =data.split(", ") 
+            alert(`A match for you! \n email: ${output[0]}, first name: ${output[1]}, last name: ${output[2]}`);
+        });
+    }
+    while(emailRepeat == null)
+    {setTimeout(() => {  console.log("sleep for email check to get back"); }, 2000);
+
+    }
     if(emailRepeat == 0)
-    {console.log("current email repeat is ", emailRepeat);
-        fetch(url, option);}
-    else if (emailRepeat == null)
-    {request();}
+    {executeEmail();
+    
+    }
+    
     else
     alert("the email already exists!");
     console.log(userAnswer);
