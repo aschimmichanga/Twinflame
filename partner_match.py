@@ -1,7 +1,9 @@
 import json
 import pandas as pd
+import numpy as np
 
-def matches(data, target_user):
+def matches(target_user):
+    # if data is csv:
     data = pd.read_excel('user_info.xlsx')
     # target_user = "user email address of who we wanna match"
     QUESTION_AMT = 10
@@ -15,11 +17,12 @@ def matches(data, target_user):
             if not df.iloc[pos, df.columns.get_loc("email")] in list_to_exclude:
                 score = 0
                 for col in range(df.columns.get_loc("last_name") + 1, df.columns.get_loc("last_name") + QUESTION_AMT + 2):
-                    if df.iloc[df.rows.get_loc(target_user), col] == df.iloc[pos, col]:
+                    user_row = np.argwhere(df.index < target_user).flatten()[-1]
+                    if df.iloc[user_row, col] == df.iloc[pos, col]:
                         score += 1
                     else:
                         score -= 1
-            data.iloc[pos, df.columns.get_loc("match_score")] = score
+                data.iloc[pos, df.columns.get_loc("match_score")] = score
         match_email = data.iloc[data['match_score'].idxmax(), data.columns.get_loc("email")]
         if len(list_to_exclude) < 4:
             return make_matches(df, target_email, list_to_exclude.append(match_email))
@@ -49,4 +52,7 @@ def matches(data, target_user):
         "third" : third
     }
 
-    return match_emails.dump()
+    print(match_emails)
+    return json.dumps(match_emails)
+
+matches("sampleemail1")
